@@ -116,6 +116,27 @@
       height: 100vh;
     }
 
+    header.contact-info {
+      background: #ffffff;
+      border-bottom: 1px solid #ccc;
+      padding: 1.5em 2em;
+    }
+
+    header.contact-info h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    header.contact-info p {
+      margin: 0.25em 0 0 0;
+      font-size: 1em;
+    }
+
+    header.contact-info a {
+      color: #004a99;
+      text-decoration: none;
+    }
+
     footer {
       text-align: center;
       padding: 1em;
@@ -136,7 +157,11 @@
 
       main {
         margin: 0;
-        padding-bottom: 300px; /* space for the fixed chat */
+        padding-bottom: 300px;
+      }
+
+      header.contact-info {
+        margin-left: 0;
       }
     }
   </style>
@@ -156,15 +181,25 @@
 </aside>
 
 <main>
-  <header>
+  <header class="contact-info">
     <h1>Jonah Ortiz</h1>
-    <p>Welcome! Use the assistant on the left to learn more about Jonah’s background, experience, and to schedule an interview.</p>
+    <p>
+      <a href="mailto:jonahg.ortiz@gmail.com">jonahg.ortiz@gmail.com</a> |
+      <a href="tel:+19493702188">(949) 370-2188</a> |
+      San Diego, CA |
+      <a href="https://www.linkedin.com/in/jonahgortiz" target="_blank">LinkedIn Profile</a> |
+      <a href="JONAHORTIZ_CV_07.2025.pdf" download>Download Resume</a>
+    </p>
   </header>
 
   <section>
     <h2>About Jonah</h2>
     <p>Jonah Ortiz is a Business Intelligence Analyst with 10 years of experience in data analytics, working with companies like HP, Seer Interactive, and Havas Edge. He specializes in subscription analytics, agile sprints, and building self-serve data tools in Databricks and ThoughtSpot.</p>
-    <!-- You can add more site content here -->
+  </section>
+
+  <section>
+    <h2>Resume</h2>
+    <iframe src="JONAHORTIZ_CV_07.2025.pdf" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
   </section>
 
   <footer>
