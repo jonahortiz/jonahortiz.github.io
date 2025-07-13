@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jonah Ortiz – Resume</title>
+  <title>Interview Request – Jonah Ortiz</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
@@ -53,7 +53,9 @@
       margin-right: 0.5em;
     }
 
-    header.contact-info a:hover { text-decoration: underline; }
+    header.contact-info a:hover {
+      text-decoration: underline;
+    }
 
     nav.navbar {
       position: fixed;
@@ -75,14 +77,16 @@
       font-weight: bold;
     }
 
-    nav.navbar a:hover { text-decoration: underline; }
+    nav.navbar a:hover {
+      text-decoration: underline;
+    }
 
     aside#chat-container {
       position: fixed;
       top: 190px;
       left: 0;
       bottom: 0;
-      width: 700px;
+      width: 700px; /* doubled width */
       background: #ffffff;
       border-right: 1px solid #ddd;
       display: flex;
@@ -141,7 +145,9 @@
       transition: background-color 0.3s ease;
     }
 
-    button:hover { background: #333353; }
+    button:hover {
+      background: #333353;
+    }
 
     .message {
       margin: 0.5em 0;
@@ -168,49 +174,47 @@
 
     main {
       margin-top: 190px;
-      margin-left: 720px;
-      margin-right: 2em;
+      margin-left: 720px; /* offset for chat width */
       padding: 2em;
       background: white;
       min-height: calc(100vh - 190px);
       box-shadow: 0 0 15px rgba(0,0,0,0.05);
       border-radius: 8px;
+      margin-right: 2em;
     }
 
-    h2 {
-      margin-top: 2em;
+    main h2 {
       border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3em;
+      padding-bottom: 5px;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .job-title {
-      font-weight: bold;
-      margin-top: 1em;
-    }
-
-    .company {
-      font-style: italic;
-    }
-
-    .location-dates {
-      font-size: 0.9em;
-      color: #555;
-      margin-bottom: 0.5em;
-    }
-
-    img {
+    iframe {
       width: 100%;
+      height: 2000px;
+      border: 1px solid #ccc;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin-top: 1em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 1000px) {
+      aside#chat-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-right: none;
+      }
+
+      main {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 1em;
+        width: 100%;
+      }
+
+      iframe {
+        height: 1500px;
+      }
     }
   </style>
 </head>
@@ -231,7 +235,7 @@
     <a href="resume.html">Resume/CV Info</a>
     <a href="interview.html">Interview Scheduler</a>
   </nav>
-
+  
   <aside id="chat-container">
     <header>
       <h2>Jonah's Chatbot Assistant</h2>
@@ -243,7 +247,6 @@
       <button type="submit">Send</button>
     </form>
   </aside>
-
   <main>
     <h2>CV/Resume Summary</h2>
     <p>I specialize in building scalable, self-serve reporting ecosystems that turn complex data into clear, actionable insights. At HP, I focus on end-to-end funnel visibility—helping teams across marketing, product, and operations understand user acquisition, retention, and behavior to drive better decisions.</p>
@@ -315,6 +318,7 @@
     <h2>Dashboard Example</h2>
     <p>This dashboard was generated using Microsoft Power BI. I'm also proficient in Tableau, ThoughtSpot, Looker, Data Studio, and more!</p>
     <img src="dashboard_example.jpg" alt="Dashboard Example" style="width: 85%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+  </main>
   </main>
 
   <script>
