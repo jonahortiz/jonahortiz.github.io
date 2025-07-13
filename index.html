@@ -111,10 +111,10 @@
   const form = document.getElementById('chat-form');
   const input = document.getElementById('user-input');
 
-  // Generate or retrieve sessionId
+  // Generate or retrieve sessionId (stored in sessionStorage)
   let sessionId = sessionStorage.getItem('sessionId');
   if (!sessionId) {
-    sessionId = crypto.randomUUID(); // Secure unique ID
+    sessionId = crypto.randomUUID();
     sessionStorage.setItem('sessionId', sessionId);
   }
 
@@ -132,7 +132,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: userMessage,
-          sessionId: sessionId // Send sessionId to webhook
+          sessionId: sessionId
         })
       });
 
