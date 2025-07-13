@@ -316,13 +316,11 @@
           body: JSON.stringify({ message: userMessage, sessionId: sessionId })
         });
 
-        if (!response.ok) throw new Error(`Network error: ${response.status}`);
+        if (!response.ok) throw new Error(Network error: ${response.status});
 
         const data = await response.json();
         const botReply = data.reply || data.message || "Sorry, I didn't get a response.";
-
-        // ✅ Convert Markdown to HTML
-        typingIndicator.innerHTML = marked.parse(botReply);
+        typingIndicator.textContent = botReply;
         typingIndicator.classList.remove('typing');
       } catch (error) {
         typingIndicator.textContent = 'Error: Unable to reach the chatbot.';
