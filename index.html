@@ -139,7 +139,8 @@
       if (!response.ok) throw new Error(`Network error: ${response.status}`);
 
       const data = await response.json();
-      const botReply = data.reply || "Sorry, I didn't get a response.";
+      const botReply = data.reply || data.message || "Sorry, I didn't get a response.";
+      appendMessage(botReply, 'bot');
 
       appendMessage(botReply, 'bot');
     } catch (error) {
