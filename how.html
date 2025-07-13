@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jonah Ortiz</title>
+  <title>Jonah Ortiz — Interview Assistant</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
@@ -138,7 +138,6 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
     button:hover { background: #333353; }
 
     .message {
@@ -156,7 +155,6 @@
       align-self: flex-end;
       border-bottom-right-radius: 2px;
     }
-
     .bot {
       background: #e5e5e5;
       color: #333;
@@ -174,6 +172,46 @@
       border-radius: 8px;
       margin-right: 2em;
     }
+
+    .content-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .cover-letter img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .resume-summary section {
+      margin-bottom: 2em;
+    }
+
+    .resume-summary h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .resume-summary ul {
+      padding-left: 20px;
+    }
+
+    .resume-summary li {
+      margin-bottom: 10px;
+    }
+
+    .job-title { font-weight: bold; }
+    .company { font-style: italic; }
+    .location-dates { font-size: 0.9em; color: #555; }
   </style>
 </head>
 <body>
@@ -190,6 +228,7 @@
 
   <nav class="navbar">
     <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
     <a href="interview.html">Interview Scheduler</a>
     <a href="how.html">How I Built This</a>
   </nav>
@@ -207,56 +246,83 @@
   </aside>
 
   <main>
-    <!-- Page-specific content goes here -->
+    <section class="content-columns">
+      <div class="column cover-letter">
+        <img src="dashboard_example.jpg" alt="Cover Letter">
+      </div>
+      <div class="column resume-summary">
+        <h2>Summary</h2>
+<p>I specialize in building scalable, self-serve reporting ecosystems that turn complex data into clear, actionable insights. At HP, I focus on end-to-end funnel visibility—helping teams across marketing, product, and operations understand user acquisition, retention, and behavior to drive better decisions.</p>
+<p>With 10 years in analytics and 4+ years in business intelligence, my work is rooted in simplifying data for strategic impact. I’m passionate about enabling organizations to act quickly and confidently by aligning analytics with business goals and empowering teams through accessible, cross-functional reporting.</p>
+
+<h2>Skills & Interests</h2>
+<ul>
+  <li><strong>General Skills:</strong> Business Intelligence, Dashboards, Databricks, Snowflake, Looker, Agile Sprints, JIRA, GitHub</li>
+  <li><strong>Languages/Scripting:</strong> SQL, Python, LookML (Looker), VBA, ThoughtSpot Modeling Language (TML)</li>
+  <li><strong>Visualization Tools:</strong> Tableau, ThoughtSpot, Microsoft PowerBI, Looker, Looker Studio (GDS)</li>
+  <li><strong>Interests:</strong> Basketball – Playing & Watching! Golf, Camping & Hiking, Fitness & Weightlifting, Travel, Gaming</li>
+</ul>
+
+<h2>Experience</h2>
+<p class="job-title">Business Intelligence Analyst III <span class="company">@ HP Inc. (HPQ)</span></p>
+<p class="location-dates">May 2021 – Present | San Diego, CA / Telework</p>
+<ul>
+  <li>Build and scale reporting ecosystems using Databricks and ThoughtSpot, enabling cross-functional teams to track user behavior and business outcomes across acquisition, activation, churn, and retention.</li>
+  <li>Lead Analytics for Subscription Pilot services – Lead the Printer and PC as a service Pilots for our Subscription Services division, helping to build out end to end reporting funnels from acquisition all the way down to cancellation, churn and delinquency.</li>
+  <li>Agile Methodology - Collaborate cross-functionally with Program, Marketing, and Operations teams in biweekly agile sprints, participating in regular internal scrums and program-specific standups; manage work through JIRA while remaining flexible to address high-priority ad hoc requests and evolving business needs.</li>
+  <li>Help Scale Pilots to increase incremental Enrollees – Reporting out on net new 3.9k+ enrollments to these programs, representing $46M in projected annualized revenue to our subscription base.</li>
+  <li>Developed full-funnel reporting from landing page to checkout, cancellation, and delinquency — supporting initiatives from a full customer journey perspective, migrating from ad-hoc reports to full funnel dashboards.</li>
+  <li>Streamlined dashboard delivery by migrating legacy into ThoughtSpot using Databricks semantic layers, enabling self-serve analytics and reducing ad hoc reporting time by more than 40% across several programs and pilots.</li>
+</ul>
+<p class="job-title">Analytics Account Manager <span class="company">@ Seer Interactive</span></p>
+<p class="location-dates">Feb 2020 – May 2021 | San Diego, CA</p>
+<ul>
+  <li>Managed the end-to-end analytics strategy and implementation for a diverse portfolio of clients across multiple industries and verticals. Projects ranged from highly technical efforts—such as advanced data cleaning, custom tagging strategies, and event tracking setup—to broader, cross-functional initiatives spanning marketing, product, and engineering teams.</li>
+  <li>Leveraged Google Analytics (GA4) and Google Tag Manager to establish clean, reliable data pipelines and event tracking frameworks, enabling actionable insights across digital touchpoints. Partnered with stakeholders to align KPIs and measurement plans with business goals, ensuring consistent data governance and scalable architecture.</li>
+
+<li>Transformed complex datasets into meaningful narratives using visualization and BI tools including Tableau, Power BI, and Looker Studio (formerly Data Studio). Delivered interactive dashboards and performance reports to inform decision-making at both the tactical and executive levels.</li>
+</ul>
+<p class="job-title">Senior Analytics Associate <span class="company">@ Seer Interactive</span></p>
+<p class="location-dates">Jun 2019 – Feb 2020 | San Diego, CA</p>
+<ul>
+  <li>Supported digital analytics strategy and reporting for smaller client accounts, focusing on delivering actionable performance insights.</li>
+  <li>Utilized Google Analytics (Universal & GA4), Google Tag Manager, and Adobe Analytics for web and app tracking, tag validation, and user behavior analysis.</li>
+  <li>Built dynamic dashboards using Power BI, Tableau, and Looker Studio to visualize campaign performance and key business metrics.</li>
+  <li>Applied SQL for querying and data transformation to support reporting workflows and ad hoc analysis.</li>
+  <li>Strengthened core skills in business intelligence (BI), dashboard building, and delivering impactful business insights through analytics.</li>
+</ul>
+<p class="job-title">Analytics Associate <span class="company">@ Seer Interactive</span></p>
+<p class="location-dates">Jul 2018 – Jun 2019 | San Diego, CA</p>
+<ul>
+  <li>Established the building blocks of a career in Digital Marketing through work in several technology stacks: primarily working in Google Analytics as a GA Agency Preferred Partner. Assisted in tag implementation, QA, and performance tracking across client websites. Developed foundational skills in Google Analytics, Google Tag Manager, and Looker Studio, contributing to data collection, dashboarding, and insights delivery.</li>
+</ul>
+<p class="job-title">Attribution Analyst <span class="company">@ Havas Edge</span></p>
+<p class="location-dates">Aug 2017 – Jun 2018 | San Diego, CA</p>
+<ul>
+  <li>Maintain and execute a portfolio of attribution models using Microsoft SQL Server, supporting both internal stakeholders and external client reporting needs.</li>
+  <li>Deliver weekly campaign performance reports to account teams, offering actionable business insights to optimize media planning and campaign strategy.</li>
+  <li>Microsoft SQL Server Management Studio (SSMS): DDL/DML querying, quality control, ETL workflows, attribution analysis.</li>
+  <li>Microsoft Access: Data management and report generation.</li>
+  <li>Microsoft Excel: Pivot Tables, Power Pivot, Macros, VLOOKUP, INDEX/MATCH, basic VBA scripting.</li> 
+  <li>ArcGIS: Geographic data visualization and spatial analysis.</li>
+  <li>Business Intelligence Tools: Dashboard creation and data storytelling using Power BI and Tableau.</li>
+</ul>
+
+
+<p class="job-title">Media Analyst <span class="company">@ Havas Edge</span></p>
+<p class="location-dates">Aug 2016 – Aug 2017 | San Diego, CA</p>
+<p class="job-title">Short Form Media Intern <span class="company">@ Havas Edge</span></p>
+<p class="location-dates">Jun 2016 – Aug 2016 | San Diego, CA</p>
+<p class="job-title">Social Media Manager <span class="company">@ Dunstan Surfwear</span></p>
+<p class="location-dates">Jan 2016 – Jun 2016</p>
+<p class="job-title">Sales Associate <span class="company">@ West Marine</span></p>
+<p class="location-dates">Jul 2013 – Jan 2016</p>
+
+<h2>Education</h2>
+<p><strong>San Diego State University</strong> – B.S. Business Administration</p>
+<p class="location-dates">2012 – 2016 | San Diego, CA</p>
+      </div>
+    </section>
   </main>
-
-  <script>
-    const chat = document.getElementById('chat');
-    const form = document.getElementById('chat-form');
-    const input = document.getElementById('user-input');
-
-    let sessionId = sessionStorage.getItem('sessionId');
-    if (!sessionId) {
-      sessionId = crypto.randomUUID();
-      sessionStorage.setItem('sessionId', sessionId);
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const userMessage = input.value.trim();
-      if (!userMessage) return;
-      input.value = '';
-      appendMessage(userMessage, 'user');
-      const typingIndicator = appendMessage('Bot is typing...', 'bot', true);
-      typingIndicator.classList.add('typing');
-
-      try {
-        const response = await fetch('https://jonahgortiz.app.n8n.cloud/webhook/interview-bot', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: userMessage, sessionId: sessionId })
-        });
-
-        if (!response.ok) throw new Error(`Network error: ${response.status}`);
-
-        const data = await response.json();
-        const botReply = data.reply || data.message || "Sorry, I didn't get a response.";
-        typingIndicator.textContent = botReply;
-        typingIndicator.classList.remove('typing');
-      } catch (error) {
-        typingIndicator.textContent = 'Error: Unable to reach the chatbot.';
-        typingIndicator.classList.remove('typing');
-      }
-    });
-
-    function appendMessage(text, sender, returnNode = false) {
-      const div = document.createElement('div');
-      div.classList.add('message', sender);
-      div.textContent = text;
-      chat.appendChild(div);
-      chat.scrollTop = chat.scrollHeight;
-      return returnNode ? div : undefined;
-    }
-  </script>
 </body>
 </html>
