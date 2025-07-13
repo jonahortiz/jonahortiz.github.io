@@ -52,6 +52,7 @@
       text-decoration: none;
       margin-right: 0.5em;
     }
+
     header.contact-info a:hover { text-decoration: underline; }
 
     nav.navbar {
@@ -73,6 +74,7 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     nav.navbar a:hover { text-decoration: underline; }
 
     aside#chat-container {
@@ -80,7 +82,7 @@
       top: 190px;
       left: 0;
       bottom: 0;
-      width: 350px;
+      width: 700px; /* doubled width */
       background: #ffffff;
       border-right: 1px solid #ddd;
       display: flex;
@@ -138,6 +140,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     button:hover { background: #333353; }
 
     .message {
@@ -155,6 +158,7 @@
       align-self: flex-end;
       border-bottom-right-radius: 2px;
     }
+
     .bot {
       background: #e5e5e5;
       color: #333;
@@ -164,7 +168,7 @@
 
     main {
       margin-top: 190px;
-      margin-left: 370px;
+      margin-left: 720px; /* adjusted to match new chatbot width */
       padding: 2em;
       background: white;
       min-height: calc(100vh - 190px);
@@ -191,27 +195,19 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .resume-summary section {
-      margin-bottom: 2em;
-    }
+    @media (max-width: 1000px) {
+      aside#chat-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        border-right: none;
+      }
 
-    .resume-summary h2 {
-      margin-top: 0;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      main {
+        margin-left: 0;
+      }
     }
-
-    .resume-summary ul {
-      padding-left: 20px;
-    }
-
-    .resume-summary li {
-      margin-bottom: 10px;
-    }
-
-    .job-title { font-weight: bold; }
-    .company { font-style: italic; }
-    .location-dates { font-size: 0.9em; color: #555; }
   </style>
 </head>
 <body>
@@ -246,54 +242,53 @@
 
   <main>
     <section class="content-columns">
-<div class="column cover-letter">
-  <h2>Welcome to My Website!</h2>
-  <hr>
-  <p>This website has a few different elements that bring it together. My HTML skills are pretty limited, but I wanted to showcase my ability to build something from scratch using AI tools. It was built primarily using OpenAI’s ChatGPT alongside other online resources.</p>
-  <ul style="line-height: 1.5;">
-    <li>The chatbot on the left uses a combination of an n8n AI workflow and ChatGPT Assistant to answer questions about my work experience.</li>
-    <li>The AI chatbot was designed with many prompts to constrain responses and provide relevant feedback.</li>
-    <li>The HTML was primarily coded by ChatGPT, with myself guiding the structure and content.</li>
-  </ul>
+      <div class="column cover-letter">
+        <h2>Welcome to My Website!</h2>
+        <hr>
+        <p>This website has a few different elements that bring it together. My HTML skills are pretty limited, but I wanted to showcase my ability to build something from scratch using AI tools. It was built primarily using OpenAI’s ChatGPT alongside other online resources.</p>
+        <ul style="line-height: 1.5;">
+          <li>The chatbot on the left uses a combination of an n8n AI workflow and ChatGPT Assistant to answer questions about my work experience.</li>
+          <li>The AI chatbot was designed with many prompts to constrain responses and provide relevant feedback.</li>
+          <li>The HTML was primarily coded by ChatGPT, with myself guiding the structure and content.</li>
+        </ul>
 
-<h2>How I Built This</h2>
-<hr>
-<p>This section outlines the architecture and automation behind this AI-powered interview assistant. The chatbot you see on the left is fully integrated with a back-end workflow powered by <strong>n8n</strong> and <strong>OpenAI’s Assistant API</strong>. I built this using no-code and low-code tools that allow for dynamic, context-aware interactions with recruiters, hiring managers, and others exploring my qualifications.</p>
+        <h2>How I Built This</h2>
+        <hr>
+        <p>This section outlines the architecture and automation behind this AI-powered interview assistant. The chatbot you see on the left is fully integrated with a back-end workflow powered by <strong>n8n</strong> and <strong>OpenAI’s Assistant API</strong>. I built this using no-code and low-code tools that allow for dynamic, context-aware interactions with recruiters, hiring managers, and others exploring my qualifications.</p>
 
-<div style="margin-bottom: 2em;">
-  <h3>Chatbot Integration (n8n + OpenAI Assistant)</h3>
-  <img src="chatbot_integration.jpg" alt="Chatbot Integration Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
-  <p style="margin-top: 0.5em;">
-    The chatbot was built leveraging the <strong>n8n AI workflow integration</strong> as shown above. The workflow ingests questions from users in the front-end, uses the Webhook integration from n8n to route the message to OpenAI, then parses and returns an intelligent reply—constrained by assistant instructions that ensure it only answers questions related to my professional experience.
-  </p>
-  <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
-    <li>Front-end JavaScript captures user input and sends it via POST to an <code>n8n.cloud</code> webhook endpoint.</li>
-    <li>n8n Webhook node triggers a flow that forwards the request to OpenAI’s Assistant API using the HTTP Request node.</li>
-    <li>OpenAI Assistant has been preloaded with structured prompt instructions focused on my resume, experience, and interview scheduling only.</li>
-    <li>The response from OpenAI is captured, parsed, and returned back to the front-end chatbot.</li>
-    <li>Context is preserved with a session ID passed from the browser to maintain conversation continuity.</li>
-  </ul>
-</div>
+        <div style="margin-bottom: 2em;">
+          <h3>Chatbot Integration (n8n + OpenAI Assistant)</h3>
+          <img src="chatbot_integration.jpg" alt="Chatbot Integration Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            The chatbot was built leveraging the <strong>n8n AI workflow integration</strong> as shown above. The workflow ingests questions from users in the front-end, uses the Webhook integration from n8n to route the message to OpenAI, then parses and returns an intelligent reply—constrained by assistant instructions that ensure it only answers questions related to my professional experience.
+          </p>
+          <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
+            <li>Front-end JavaScript captures user input and sends it via POST to an <code>n8n.cloud</code> webhook endpoint.</li>
+            <li>n8n Webhook node triggers a flow that forwards the request to OpenAI’s Assistant API using the HTTP Request node.</li>
+            <li>OpenAI Assistant has been preloaded with structured prompt instructions focused on my resume, experience, and interview scheduling only.</li>
+            <li>The response from OpenAI is captured, parsed, and returned back to the front-end chatbot.</li>
+            <li>Context is preserved with a session ID passed from the browser to maintain conversation continuity.</li>
+          </ul>
+        </div>
 
-<div style="margin-bottom: 2em;">
-  <h3>Email Automation Workflow</h3>
-  <img src="email_automation.jpg" alt="Email Automation Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
-  <p style="margin-top: 0.5em;">
-    When a user completes the interview request form, their submission triggers an <strong>automated email workflow</strong> inside n8n. This process ensures prompt delivery of structured interview request details to my inbox and logs the response for tracking.
-  </p>
-  <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
-    <li>The form is hosted via an n8n Form Trigger and posts structured data to a flow.</li>
-    <li>The data is mapped into a formatted email using HTML or Markdown templates.</li>
-    <li>Emails are dispatched using n8n’s built-in Gmail or SMTP node for delivery.</li>
-    <li>Data can optionally be logged into Airtable, Google Sheets, or Notion for recordkeeping.</li>
-    <li>Each submission includes context like company, interview request type, and preferred time block.</li>
-  </ul>
-</div>
-
-</div>
-      
+        <div style="margin-bottom: 2em;">
+          <h3>Email Automation Workflow</h3>
+          <img src="email_automation.jpg" alt="Email Automation Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            When a user completes the interview request form, their submission triggers an <strong>automated email workflow</strong> inside n8n. This process ensures prompt delivery of structured interview request details to my inbox and logs the response for tracking.
+          </p>
+          <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
+            <li>The form is hosted via an n8n Form Trigger and posts structured data to a flow.</li>
+            <li>The data is mapped into a formatted email using HTML or Markdown templates.</li>
+            <li>Emails are dispatched using n8n’s built-in Gmail or SMTP node for delivery.</li>
+            <li>Data can optionally be logged into Airtable, Google Sheets, or Notion for recordkeeping.</li>
+            <li>Each submission includes context like company, interview request type, and preferred time block.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
-</body>
+
   <script>
     const chat = document.getElementById('chat');
     const form = document.getElementById('chat-form');
