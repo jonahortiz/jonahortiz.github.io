@@ -255,6 +255,22 @@
     <li>The HTML was primarily coded by ChatGPT, with myself guiding the structure and content.</li>
   </ul>
 
+  <h2>How I Built This</h2>
+<hr>
+<p>This section outlines how I combined no-code and AI tools to develop an interactive and automated interview assistant. Below are visuals of both the chatbot workflow and automated email integration from n8n.</p>
+
+<div style="margin-bottom: 2em;">
+  <h3>Chatbot Integration (n8n + OpenAI Assistant)</h3>
+  <img src="chatbot_integration.jpg" alt="Chatbot Integration Workflow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+  <p style="margin-top: 0.5em; font-style: italic;">The chatbot was built leveraging the n8n AI workflow integration as shown above. The workflow ingests the responses from the chatbot in the front-end, uses the Webhook integration from n8n, parses out the information to send to my OpenAI Chatbot Assistant, then provides information constrained to the way the AI bot has been prompted.</p>
+</div>
+
+<div style="margin-bottom: 2em;">
+  <h3>Email Automation Workflow</h3>
+  <img src="email_automation.jpg" alt="Email Automation Workflow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+  <p style="margin-top: 0.5em; font-style: italic;">The second automation is a bit simpler. The form is embedded into the Interview Scheduler tab at the top, then it parses the provided information to send an email alerting me to the responses. It then drafts an email with a follow-up message that I can review in my outbox before sending.</p>
+</div>
+
   <h2>Dashboard Example</h2>
   <hr>
   <p>This dashboard was generated using Microsoft Power BI. I'm also proficient in Tableau, ThoughtSpot, Looker, Data Studio, and more!</p>
