@@ -5,26 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jonah Ortiz — Interview Assistant</title>
   <style>
+    /* Reset and box sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f0f0f0;
-      display: flex;
       height: 100vh;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Header fixed on top */
+    header.contact-info {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #121212;
+      color: white;
+      padding: 1.5em 2em;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header.contact-info h1 {
+      font-size: 3em;
+      margin: 0 0 0.2em 0;
+      font-weight: bold;
+    }
+
+    header.contact-info .tagline {
+      font-size: 1.2em;
+      margin: 0 0 0.5em 0;
+      font-weight: 500;
+      color: #bbb;
+    }
+
+    header.contact-info p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    header.contact-info a {
+      color: #bbdefb;
+      text-decoration: none;
+      margin-right: 0.5em;
+    }
+
+    header.contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chatbot sidebar below header */
     aside#chat-container {
+      position: fixed;
+      top: 100px; /* height of header */
+      left: 0;
+      bottom: 0;
       width: 350px;
       background: #ffffff;
       border-right: 1px solid #ddd;
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
@@ -34,6 +85,7 @@
       color: white;
       padding: 1em;
       text-align: center;
+      flex-shrink: 0;
     }
 
     #chat {
@@ -48,6 +100,8 @@
       display: flex;
       gap: 0.5em;
       padding: 1em;
+      flex-shrink: 0;
+      border-top: 1px solid #ddd;
     }
 
     input[type="text"] {
@@ -108,52 +162,26 @@
       100% { opacity: 0.5; }
     }
 
+    /* Main content area - pushed right and down below header */
     main {
-      margin-left: 350px;
+      margin-top: 100px; /* header height */
+      margin-left: 350px; /* sidebar width */
       padding: 2em;
-      flex: 1;
-      overflow-y: auto;
-      height: 100vh;
-    }
-
-    header.contact-info {
-      background-color: #121212;
-      color: white;
-      padding: 2em 2em 1.5em 2em;
-      margin-left: 0;
-      width: 100vw;
-      box-sizing: border-box;
-    }
-
-    header.contact-info h1 {
-      font-size: 3em;
-      margin: 0 0 0.2em 0;
-      font-weight: bold;
-    }
-
-    header.contact-info .tagline {
-      font-size: 1.2em;
-      margin: 0 0 1em 0;
-      font-weight: 500;
-      color: #bbb;
-    }
-
-    header.contact-info p {
-      margin: 0;
-      font-size: 1em;
-    }
-
-    header.contact-info a {
-      color: #bbdefb;
-      text-decoration: none;
-    }
-
-    header.contact-info a:hover {
-      text-decoration: underline;
+      background: white;
+      height: auto;
+      overflow: visible;
     }
 
     section h2 {
       margin-top: 0;
+    }
+
+    /* Resume iframe fixed height */
+    iframe.resume-viewer {
+      width: 100%;
+      height: 80vh;  /* 80% of viewport height */
+      border: 1px solid #ccc;
+      overflow: hidden;
     }
 
     footer {
@@ -163,29 +191,44 @@
       color: #888;
     }
 
+    /* Responsive: stack chat below header on small screens */
     @media (max-width: 768px) {
       aside#chat-container {
-        width: 100%;
         position: fixed;
-        height: auto;
-        top: auto;
-        bottom: 0;
+        top: 160px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 160px);
         border-right: none;
         border-top: 1px solid #ddd;
       }
 
       main {
-        margin: 0;
+        margin-left: 0;
+        margin-top: 160px;
         padding-bottom: 300px;
       }
 
       header.contact-info {
-        margin-left: 0;
+        height: auto;
+        padding-bottom: 1em;
       }
     }
   </style>
 </head>
 <body>
+
+<header class="contact-info">
+  <h1>Jonah Ortiz</h1>
+  <p class="tagline">Business Intelligence and Data Analytics Professional</p>
+  <p>
+    <a href="mailto:jonahg.ortiz@gmail.com">jonahg.ortiz@gmail.com</a> |
+    <a href="tel:+19493702188">(949) 370-2188</a> |
+    San Diego, CA |
+    <a href="https://www.linkedin.com/in/jonahgortiz" target="_blank" rel="noopener">LinkedIn Profile</a> |
+    <a href="https://jonahortiz.github.io/JONAHORTIZ_CV_07.2025.pdf" download>Download Resume</a>
+  </p>
+</header>
 
 <aside id="chat-container">
   <header>
@@ -200,18 +243,6 @@
 </aside>
 
 <main>
-  <header class="contact-info">
-    <h1>Jonah Ortiz</h1>
-    <p class="tagline">Business Intelligence and Data Analytics Professional</p>
-    <p>
-      <a href="mailto:jonahg.ortiz@gmail.com">jonahg.ortiz@gmail.com</a> |
-      <a href="tel:+19493702188">(949) 370-2188</a> |
-      San Diego, CA |
-      <a href="https://www.linkedin.com/in/jonahgortiz" target="_blank" rel="noopener">LinkedIn Profile</a> |
-      <a href="https://jonahortiz.github.io/JONAHORTIZ_CV_07.2025.pdf" download>Download Resume</a>
-    </p>
-  </header>
-
   <section>
     <h2>About Jonah</h2>
     <p>Jonah Ortiz is a Business Intelligence Analyst with 10 years of experience in data analytics, working with companies like HP, Seer Interactive, and Havas Edge. He specializes in subscription analytics, agile sprints, and building self-serve data tools in Databricks and ThoughtSpot.</p>
@@ -219,7 +250,12 @@
 
   <section>
     <h2>Resume</h2>
-    <iframe src="https://jonahortiz.github.io/JONAHORTIZ_CV_07.2025.pdf" width="100%" height="600px" style="border: 1px solid #ccc;"></iframe>
+    <iframe
+      class="resume-viewer"
+      src="https://jonahortiz.github.io/JONAHORTIZ_CV_07.2025.pdf"
+      title="Jonah Ortiz Resume"
+      loading="lazy"
+    ></iframe>
     <p>If the resume above does not load, you can <a href="https://jonahortiz.github.io/JONAHORTIZ_CV_07.2025.pdf" download>download it here</a>.</p>
   </section>
 
