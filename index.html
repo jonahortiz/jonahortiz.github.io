@@ -255,20 +255,38 @@
     <li>The HTML was primarily coded by ChatGPT, with myself guiding the structure and content.</li>
   </ul>
 
-  <h2>How I Built This</h2>
+<h2>How I Built This</h2>
 <hr>
-<p>This section outlines how I combined no-code and AI tools to develop an interactive and automated interview assistant. Below are visuals of both the chatbot workflow and automated email integration from n8n.</p>
+<p>This section outlines the architecture and automation behind this AI-powered interview assistant. The chatbot you see on the left is fully integrated with a back-end workflow powered by <strong>n8n</strong> and <strong>OpenAI’s Assistant API</strong>. I built this using no-code and low-code tools that allow for dynamic, context-aware interactions with recruiters, hiring managers, and others exploring my qualifications.</p>
 
 <div style="margin-bottom: 2em;">
   <h3>Chatbot Integration (n8n + OpenAI Assistant)</h3>
   <img src="chatbot_integration.jpg" alt="Chatbot Integration Workflow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
-  <p style="margin-top: 0.5em; font-style: italic;">The chatbot was built leveraging the n8n AI workflow integration as shown above. The workflow ingests the responses from the chatbot in the front-end, uses the Webhook integration from n8n, parses out the information to send to my OpenAI Chatbot Assistant, then provides information constrained to the way the AI bot has been prompted.</p>
+  <p style="margin-top: 0.5em;">
+    The chatbot was built leveraging the <strong>n8n AI workflow integration</strong> as shown above. The workflow ingests questions from users in the front-end, uses the Webhook integration from n8n to route the message to OpenAI, then parses and returns an intelligent reply—constrained by assistant instructions that ensure it only answers questions related to my professional experience.
+  </p>
+  <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
+    <li>Front-end JavaScript captures user input and sends it via POST to an <code>n8n.cloud</code> webhook endpoint.</li>
+    <li>n8n Webhook node triggers a flow that forwards the request to OpenAI’s Assistant API using the HTTP Request node.</li>
+    <li>OpenAI Assistant has been preloaded with structured prompt instructions focused on my resume, experience, and interview scheduling only.</li>
+    <li>The response from OpenAI is captured, parsed, and returned back to the front-end chatbot.</li>
+    <li>Context is preserved with a session ID passed from the browser to maintain conversation continuity.</li>
+  </ul>
 </div>
 
 <div style="margin-bottom: 2em;">
   <h3>Email Automation Workflow</h3>
   <img src="email_automation.jpg" alt="Email Automation Workflow" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
-  <p style="margin-top: 0.5em; font-style: italic;">The second automation is a bit simpler. The form is embedded into the Interview Scheduler tab at the top, then it parses the provided information to send an email alerting me to the responses. It then drafts an email with a follow-up message that I can review in my outbox before sending.</p>
+  <p style="margin-top: 0.5em;">
+    When a user completes the interview request form, their submission triggers an <strong>automated email workflow</strong> inside n8n. This process ensures prompt delivery of structured interview request details to my inbox and logs the response for tracking.
+  </p>
+  <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
+    <li>The form is hosted via an n8n Form Trigger and posts structured data to a flow.</li>
+    <li>The data is mapped into a formatted email using HTML or Markdown templates.</li>
+    <li>Emails are dispatched using n8n’s built-in Gmail or SMTP node for delivery.</li>
+    <li>Data can optionally be logged into Airtable, Google Sheets, or Notion for recordkeeping.</li>
+    <li>Each submission includes context like company, interview request type, and preferred time block.</li>
+  </ul>
 </div>
 
   <h2>Dashboard Example</h2>
