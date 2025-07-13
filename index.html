@@ -320,7 +320,9 @@
 
         const data = await response.json();
         const botReply = data.reply || data.message || "Sorry, I didn't get a response.";
-        typingIndicator.textContent = botReply;
+
+        // ✅ Convert Markdown to HTML
+        typingIndicator.innerHTML = marked.parse(botReply);
         typingIndicator.classList.remove('typing');
       } catch (error) {
         typingIndicator.textContent = 'Error: Unable to reach the chatbot.';
