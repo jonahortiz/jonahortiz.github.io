@@ -12,6 +12,15 @@
       padding: 0;
       background: #f0f0f0;
     }
+    
+.download-btn.spaced {
+  margin-left: 1ch;
+  position: relative;
+  top: -3px;
+  padding: 0.2em 0.6em;
+  font-size: 0.85em;
+  border-radius: 4px;
+}
 
     header.contact-info {
       position: fixed;
@@ -201,6 +210,20 @@
       padding-bottom: 5px;
     }
 
+    .download-btn {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 0.4em 1em;
+      font-size: 0.9em;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #333353;
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -276,11 +299,15 @@
     <h2>Dashboard Example</h2>
     <p>This dashboard was generated using Microsoft Power BI. I'm also proficient in Tableau, ThoughtSpot, Looker, Data Studio, and more!</p>
     <img src="dashboard_example.jpg" alt="Dashboard Example" style="width: 85%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
-   <h2>CV/Resume Summary</h2>
+
+<h2>
+  CV/Resume Summary
+  <a href="JONAHORTIZ_CV_07.2025.pdf" download class="download-btn spaced">⬇️ Download CV as a PDF</a>
+</h2>
     <p>I specialize in building scalable, self-serve reporting ecosystems that turn complex data into clear, actionable insights. At HP, I focus on end-to-end funnel visibility—helping teams across marketing, product, and operations understand user acquisition, retention, and behavior to drive better decisions.</p>
     <p>With 10 years in analytics and 4+ years in business intelligence, my work is rooted in simplifying data for strategic impact. I’m passionate about enabling organizations to act quickly and confidently by aligning analytics with business goals and empowering teams through accessible, cross-functional reporting.</p>
 
-    <h2>Skills & Interests</h2>
+<h2>Skills & Interests</h2>
     <ul>
       <li><strong>General Skills:</strong> Business Intelligence, Dashboards, Databricks, Snowflake, Looker, Agile Sprints, JIRA, GitHub</li>
       <li><strong>Languages/Scripting:</strong> SQL, Python, LookML (Looker), VBA, ThoughtSpot Modeling Language (TML)</li>
