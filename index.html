@@ -328,13 +328,21 @@
       }
     });
 
-    function appendMessage(text, sender, returnNode = false) {
-      const div = document.createElement('div');
-      div.classList.add('message', sender);
-      div.textContent = text;
-      chat.appendChild(div);
-      chat.scrollTop = chat.scrollHeight;
-      return returnNode ? div : undefined;
+function appendMessage(text, sender, returnNode = false) {
+  const div = document.createElement('div');
+  div.classList.add('message', sender);
+
+  // Allow HTML for bot replies, sanitize user input
+  if (sender === 'bot') {
+    div.innerHTML = text;
+  } else {
+    div.textContent = text;
+  }
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  return returnNode ? div : undefined;
+}
     }
   </script>
 </body>
