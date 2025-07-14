@@ -294,6 +294,11 @@
       sessionStorage.setItem('sessionId', sessionId);
     }
 
+        // Append welcome message
+    window.addEventListener('DOMContentLoaded', () => {
+      appendMessage("Hello! I'm Jonah's AI Chatbot. How can I help you today? I can answer questions about Jonah's CV and what's on his LinkedIn. You can also use the navigation at the top to learn more.", 'bot');
+    });
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const userMessage = input.value.trim();
