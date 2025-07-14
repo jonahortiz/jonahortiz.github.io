@@ -295,10 +295,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <hr>
         <p>This website has a few different elements that bring it together. I wanted to showcase my ability to build something from scratch using AI tools, even though I only have some experience coding using HTML. It was built primarily using OpenAI’s ChatGPT alongside other online resources.</p>
         <ul style="line-height: 1.5;">
+          <li>First off, I wanted to highlight my ability to stand up a basic site, add front-end tracking through GA4 and GTM, as well as back-end form submission workflows. Demonstrating my skills in end to end tracking environments!</li>
           <li>The chatbot on the left uses a combination of an n8n AI workflow and ChatGPT Assistant to answer questions about my work experience.</li>
           <li>The AI chatbot was designed with many prompts to constrain responses and provide relevant feedback.</li>
           <li>The HTML was primarily coded by ChatGPT, with myself guiding the structure and content.</li>
         </ul>
+
+        <div style="margin-bottom: 2em;">
+          <h2>What Data Am I Collecting?</h2>
+          <hr>
+
+          <h3>1. Privacy Policy</h3>
+          <img src="privacy_policy.jpg" alt="Privacy Policy Overview" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            This website includes a basic privacy policy to inform visitors about the types of data collected. The policy outlines how information like IP addresses, page views, and interaction events may be gathered and analyzed using tools such as Google Analytics and Google Tag Manager. The policy also informs users of their right to opt-out or adjust settings. This helps establish transparency and ensure compliance with regional privacy laws like GDPR and CCPA.
+          </p>
+
+          <h3>2. Google Tag Manager</h3>
+          <img src="tag_manager.jpg" alt="Google Tag Manager Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            Google Tag Manager is used to load and manage various tracking tags on this website, including analytics and interaction events. For example, it listens for interactions with the AI chatbot and sends event data (like <code>chat_interaction</code>) to Google Analytics for reporting. GTM provides a centralized, script-free way to manage data collection rules, triggers, and destinations—all while maintaining a lightweight and flexible setup.
+          </p>
+
+          <h3>3. Google Analytics 4 (GA4)</h3>
+          <img src="google_analytics.jpg" alt="Google Analytics Event Reporting" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            Google Analytics 4 is used to collect anonymous website usage data. This includes page views, session duration, and user events such as chatbot interactions. Event names like <code>chat_interaction</code> are triggered when users engage with the chat widget and are tracked through Tag Manager. No personally identifiable information (PII) is stored. This helps me better understand which features are most useful to visitors and improve the site's performance and user experience.
+          </p>
+                    <h3>4. 1st Party Data (Form Submissions)</h3>
+          <img src="form_submission.jpg" alt="Form Submission Workflow" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-top: 0.5em;">
+          <p style="margin-top: 0.5em;">
+            If you choose to use the interview request form, the information you enter—such as name, email, company, and interview details—is collected and stored temporarily as first-party data. This helps me respond to your inquiry and coordinate follow-up conversations. However, submitting the form is entirely optional. If you do not interact with the chatbot or form, and you decline optional cookies, no personal data is collected. You’re free to explore this site anonymously.
+          </p>
+          <ul style="margin-top: 1em; padding-left: 1.5em; line-height: 1.6;">
+            <li><strong>Data collected:</strong> only what you voluntarily enter (e.g., contact details, messages).</li>
+            <li><strong>How it's used:</strong> for direct communication related to interview coordination or follow-up.</li>
+            <li><strong>Where it's stored:</strong> temporarily in my n8n workflow environment or associated inbox.</li>
+            <li><strong>Opt-out:</strong> simply don’t use the form or chatbot and you won’t trigger any tracking.</li>
+          </ul>
+          
+        </div>
 
         <h2>How I Built This</h2>
         <hr>
